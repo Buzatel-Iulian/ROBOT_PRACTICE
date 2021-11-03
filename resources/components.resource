@@ -28,6 +28,7 @@ Submit Credentials
 
 Input robot design
     [Arguments]    ${head}    ${body}    ${leg}
+    Log To Console    ${head}
     Click Link    Order your robot!
     Click Button    I guess so...
     #    Options for each of the following are:    Roll_a_thor    Peanut_crusher    DAVE    Andy_Roid    Spanner_mate    Drillbit_2000
@@ -55,4 +56,7 @@ Place Order
     SeleniumLibrary.Set Screenshot Directory    ./output/orders
     Capture Element Screenshot    id:receipt
     SeleniumLibrary.Set Screenshot Directory    ./output/screenshots
+
+Return Home
+    Click Link    Home
 

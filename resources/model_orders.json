@@ -7,6 +7,16 @@
     "2":{
         "head":"Roll_a_thor",
         "body":"Roll_a_thor",
+        "legs":"Peanut_crusher"
+    },
+    "3":{
+        "head":"Andy_Roid",
+        "body":"Spanner_mate",
         "legs":"Roll_a_thor"
+    },
+    "4":{
+        "head":"Drillbit_2000",
+        "body":"Andy_Roid",
+        "legs":"DAVE"
     }
 }

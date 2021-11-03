@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    A test robot for the RobotSpareBinIndustries Login Page
+Documentation    A test robot for the RobotSpareBinIndustries Login and Order Pages
 Library    SeleniumLibrary
 Library    Screenshot
 Resource    ../resources/components.resource
@@ -33,4 +33,5 @@ Order Custom Robot
 
 Close Setup
     Log    Done.
+    Log To Console    Done Testing
     [Teardown]    Close Browser
