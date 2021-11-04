@@ -2,9 +2,10 @@
 #   RobotFramework Exercise
 This repository contains an exerise script for the RobotFramework automation framework using the RobotSpareBinIndustries website for the "test subject". The repo consists of 3 (in practice 2) tests that can be invoked from the command line:
 
-- single-test (logs in and places an order for a robot model)
-- batch-test (places multiple orders for different robot models)
-- cleanup (not really a test, the actual function is self-explanatory)
+- `single-test` ( logs in and places an order for a robot model )
+- `batch-test` ( places multiple orders for different robot models )
+- `cleanup` ( not really a test, the actual function is self-explanatory )
+- `all` ( runs `cleanup` > `single-test` > `batch-test` in that order )
 
 ##  Setup
 - ### Virtual environment

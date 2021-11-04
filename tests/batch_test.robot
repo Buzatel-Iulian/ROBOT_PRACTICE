@@ -25,11 +25,10 @@ Order Custom Robots
     ${models}    Evaluate    json.loads($file)    json
     #Log To Console    Test access json: ${models["2"]["head"]}        # Tested access to elements
     FOR    ${element}    IN    @{models}
-        Log To Console    Ordering robot nr.${element}
-        Log    Ordering robot nr.${element}
+        Log everywhere    --------Ordering robot nr.${element}-----Head: ${models["${element}"]["head"]}---Body: ${models["${element}"]["body"]}---Legs: ${models["${element}"]["legs"]}--------
         Input robot design    ${models["${element}"]["head"]}    ${models["${element}"]["body"]}    ${models["${element}"]["legs"]}
         Get Robot Review
-        Place Order
+        Try to place order
         Return Home
     END
 

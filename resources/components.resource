@@ -28,7 +28,6 @@ Submit Credentials
 
 Input robot design
     [Arguments]    ${head}    ${body}    ${leg}
-    Log To Console    ${head}
     Click Link    Order your robot!
     Click Button    I guess so...
     #    Options for each of the following are:    Roll_a_thor    Peanut_crusher    DAVE    Andy_Roid    Spanner_mate    Drillbit_2000
@@ -41,7 +40,7 @@ Get Robot Review
     Set Selenium Speed    ${wait_speed}
     Click Button    id:preview
     Set Selenium Speed    ${base_speed}
-    #Scroll Element Into View    id:robot-preview-image
+    Scroll Element Into View    id:robot-preview-image
     #Screenshot.Set Screenshot Directory    ./output/robots
     #Screenshot.Take Screenshot
     SeleniumLibrary.Set Screenshot Directory    ./output/robots
@@ -57,6 +56,28 @@ Place Order
     Capture Element Screenshot    id:receipt
     SeleniumLibrary.Set Screenshot Directory    ./output/screenshots
 
+Try to place order
+    Click Button    id:order
+    Set Selenium Speed    ${wait_speed}
+    ${present}    Run Keyword And Return Status    Element Should Be Visible    id:receipt
+    IF    ${present} == True
+        Set Selenium Speed    ${base_speed}
+        SeleniumLibrary.Set Screenshot Directory    ./output/orders
+        Capture Element Screenshot    id:receipt
+        SeleniumLibrary.Set Screenshot Directory    ./output/screenshots
+    ELSE
+        Set Selenium Speed    ${base_speed}
+        Log To Console    ! Failed to order !
+        SeleniumLibrary.Set Screenshot Directory    ./output/other
+        Capture Page Screenshot
+        SeleniumLibrary.Set Screenshot Directory    ./output/screenshots
+    END
+
 Return Home
     Click Link    Home
 
+
+Log everywhere
+    [Arguments]    ${message}
+    Log    ${message}
+    Log To Console    ${message}

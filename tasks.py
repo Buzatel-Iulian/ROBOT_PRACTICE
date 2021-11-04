@@ -33,3 +33,7 @@ def batch_test(c):
 @invoke.task()
 def cleanup(c):
     Execute("robot -d ./output tests/cleanup.robot")
+
+@invoke.task(cleanup, single_test, batch_test)
+def all(c):
+    print("Running all tests ...")
