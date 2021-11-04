@@ -13,13 +13,10 @@ On some IDEs you may have ways to automatically create a virtual environment, in
 
 A universal way of doing this however is from the terminal / command line. All you need to do is input the following commands:
 
-> `pip install virtualenv`
-
-> `cd \path\to\ROBOT_PRACTICE`
-
-> `virtualenv --python \path\to\python.exe venv`
-
-> `./venv/Scripts/activate`
+    pip install virtualenv
+    cd \path\to\ROBOT_PRACTICE
+    virtualenv --python \path\to\python.exe venv
+    ./venv/Scripts/activate
 
 - ### Dependencies
 To be fair, you can run the scripts without a virtual environment
@@ -28,7 +25,8 @@ To be fair, you can run the scripts without a virtual environment
 ...
 But it is highly unadvised given the fact that you need to install the dependencies from requirements.txt.
 You can do that by running the command:
->`pip install -r requirements.txt`
+
+    pip install -r requirements.txt
 
 - ### Webdriver
 The final thing you need to do is download the chrome browser webdriver and add it to PATH.
